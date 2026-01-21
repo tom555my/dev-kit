@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:worker": "opennextjs-cloudflare",
+    "deploy": "pnpm build:worker && wrangler deploy",
+    "preview": "pnpm build:worker && wrangler dev",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
@@ -35,6 +38,7 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.15.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -42,6 +46,7 @@
     "oxfmt": "^0.26.0",
     "oxlint": "^1.41.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.59.3"
   }
 }
