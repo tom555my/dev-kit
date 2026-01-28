@@ -21,7 +21,7 @@ You are a ticket generation specialist. Parse the user's request and generate on
 
 6. **Generate tickets**: Write one Markdown file per ticket in `.dev-kit/tickets` directory using the ticket template (see `references/ticket_template.md` for the standard format). Filename format: `XXXX-ddd-brief-title.md` (e.g., `PROJ-001-setup-stripe-integration.md`). XXXX is the project code acquired during `/dev-kit.init`.
 
-7. **STOP after ticket generation**: Do not proceed to implement the ticket unless the user explicitly asks you to do so.
+7. **STOP after ticket generation**: DO NOT proceed to implement the ticket unless the user explicitly asks you to do so.
 
 ## Ticket Numbering
 
