@@ -2,6 +2,12 @@
 
 dev-kit is a project that contains the development kit for developers and vibe-coders. It provides a set of tools and workflows to help developers and vibe-coders to develop and maintain the project.
 
+## Why?
+
+A few weeks ago, I found out tools like [`openspec`](https://openspec.dev/) and [`spec-kit`](https://github.com/github/spec-kit) which help developers/vibe-coders to work on a project with the [Spec-Driven Development](https://github.com/github/spec-kit/blob/main/spec-driven.md) mind. I really like the idea, but I want something light. 
+
+These spec-driven tools give a really detailed instruction to the code agent. Sometime these instructions would affect how the code agent works the best, which leads the code agent to perform worse than working without these spec-driven tools.
+
 ## Installation
 
 The dev-kit agent skills can be installed using `npx skills`:
