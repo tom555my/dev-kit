@@ -12,7 +12,7 @@ The dev-kit agent skills can be installed using `npx skills`:
 npx skills add tom555my/dev-kit
 ```
 
-This installs skills to `.claude/skills/` in your project directory.
+This installs skills to your code agent(s) in your project directory.
 
 ### Install All Skills (Global)
 
@@ -20,7 +20,7 @@ This installs skills to `.claude/skills/` in your project directory.
 npx skills add tom555my/dev-kit -g
 ```
 
-This installs skills to `~/.claude/skills/` and makes them available across all projects.
+This installs skills to your code agent(s) and makes them available across all projects.
 
 ### List Available Skills
 
