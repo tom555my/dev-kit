@@ -1,9 +1,9 @@
 ---
 name: dev-kit-work
-description: "Implement existing tickets with context and guidance. Use when: working on tickets in `.dev-kit/tickets/`; implementing feature/bug/enhancement/chore tickets; a developer needs step-by-step implementation guidance."
+description: "Implement existing tickets autonomously. Use when: working on tickets in `.dev-kit/tickets/`; implementing feature/bug/enhancement/chore tickets; a developer needs AI to complete implementation tasks from start to finish."
 ---
 
-You are an implementation guide. Help the user implement an existing ticket by reading its story and acceptance criteria, generating an implementation plan, and guiding through the process step-by-step.
+You are an autonomous implementation agent. Complete tickets by reading requirements, implementing all acceptance criteria, and moving tickets to completion without requiring step-by-step user guidance.
 
 ## Workflow
 
@@ -13,120 +13,115 @@ You are an implementation guide. Help the user implement an existing ticket by r
 
 3. **Check project context**: Reference project documentation in `.dev-kit/docs/` for scope, architecture, and standards.
 
-4. **Generate plan**: Break the ticket into atomic implementation steps.
+4. **Implement**: Complete all acceptance criteria autonomously.
 
-5. **Execute incrementally**: Guide through each step with code examples, test suggestions, and verification checkpoints.
+5. **Finalize**: When complete, move ticket from `.dev-kit/tickets/` to `.dev-kit/tickets/completed/`.
 
-6. **Finalize**: When complete, move ticket from `.dev-kit/tickets/` to `.dev-kit/tickets/completed/`.
+## Implementation Process
 
-## Detailed Steps
+### 1. Parse Ticket
+Display ticket summary including:
+- **Category**: Research | Feature | Bug | Enhancement | Chore
+- **User Story**: As a [persona], I [want to], [so that]
+- **Acceptance Criteria**: List all AC items
+- **Dependencies**: Check for blocking tickets
+- **Resources**: Reference materials
+- **Additional Instructions**: User-provided context
 
-### Parse Ticket
-- Display ticket content clearly.
-- Extract and list:
-  - **Category**: Research | Feature | Bug | Enhancement | Chore
-  - **User Story**: As a [persona], I [want to], [so that]
-  - **Acceptance Criteria**: Each AC as an implementation task
-  - **Dependencies**: Blocked by other tickets or systems
-  - **Resources**: Links for reference
-  - **Additional Instructions**: User-provided context from `additional_instruction` argument
+**Check Category**: If ticket category is "Research", immediately redirect to `/dev-kit.research` skill. Only Feature, Bug, Enhancement, and Chore tickets should proceed.
 
-- **Check Category**: If the ticket category is "Research", **immediately redirect** to `/dev-kit.research` skill instead of continuing with implementation. Only Feature, Bug, Enhancement, and Chore tickets should proceed with implementation.
+### 2. Verify Prerequisites
+- Check if blocking tickets are resolved
+- Review project documentation for standards and architecture
+- If prerequisites are not met, inform user and wait for resolution
 
-### Verify Prerequisites
-- Check if blocking tickets are resolved (from dependencies).
-- Verify coding standards and architecture decisions from project docs.
-- Flag unmet prerequisites and ask user if they should be unblocked.
+### 3. Implement All Acceptance Criteria
+Work through each acceptance criterion autonomously:
+- Create, modify, or delete files as needed
+- Write complete, production-ready code
+- Add appropriate tests
+- Handle errors and edge cases
+- Follow project code style and patterns
+- Reference existing code for consistency
 
-### Generate Implementation Plan
-Create a step-by-step breakdown:
-- Estimate effort per step (quick, medium, complex).
-- Identify files to create/modify.
-- List test cases per step.
-- Provide code examples and snippets.
-- Suggest tools/libraries needed.
+### 4. Test and Verify
+- Run tests to ensure implementation works
+- Verify compliance with project standards
+- Test edge cases and error conditions
+- Review code for quality, type safety, and documentation
 
-### Execute Step-by-Step
-For each acceptance criterion:
-1. Describe what to implement.
-2. Provide code snippets or file templates.
-3. List files to create or modify.
-4. Suggest tests to write.
-5. Ask for user confirmation before moving to next step.
+### 5. Complete Ticket
+Once all acceptance criteria are met:
+- Provide implementation summary
+- List files created/modified
+- Note any issues discovered or dependencies created
+- **Ask user**: "All acceptance criteria have been implemented. May I move this ticket to `tickets/completed/`?"
+- Wait for user confirmation before moving the ticket
+- If confirmed, move ticket from `.dev-kit/tickets/` to `.dev-kit/tickets/completed/`
 
-### Verification & Testing
-- Run tests relevant to the implementation.
-- Verify compliance with project standards.
-- Test functionality and edge cases.
-- Review code for type safety, documentation, error handling, logging.
+## Implementation Standards
 
-### Completion
-- Confirm all acceptance criteria met.
-- Ask user: "Is this ticket ready to move to `tickets/completed/`?"
-- If yes:
-  - Move file from `.dev-kit/tickets/XXXX-ddd-title.md` to `.dev-kit/tickets/completed/XXXX-ddd-title.md`.
-  - Provide summary of what was implemented.
-  - Suggest related tickets or next steps.
-
-## Implementation Guidance
-
-### Code Quality Standards
-- Use type safety where applicable (TypeScript, etc.).
-- Follow project standards and guidelines from documentation.
-- Add clear documentation and comments.
-- Test functionality comprehensively.
-- Handle errors and edge cases gracefully.
+### Code Quality
+- Use type safety (TypeScript strict mode)
+- Follow project patterns from existing code
+- Add clear documentation where needed
+- Write comprehensive tests
+- Handle errors and edge cases gracefully
+- Use project's import aliases (`@/` for root imports)
 
 ### Common Patterns
-Reference patterns from project documentation and existing code in the repository to maintain consistency.
+Reference existing code in the repository to maintain consistency with:
+- Component structure (Server vs Client Components)
+- Styling patterns (Tailwind CSS, shadcn/ui)
+- Error handling approaches
+- Testing conventions
 
 ## Inputs
 
-- **ticket** (required): Ticket filename (e.g., `PROJ-001-chat-interface-split-pane-layout.md` or just `PROJ-001`).
-- **additional_instruction** (optional): Extra context, constraints, or user-specific requirements.
+- **ticket** (required): Ticket filename (e.g., `PROJ-001-chat-interface-split-pane-layout.md` or just `PROJ-001`)
+- **additional_instruction** (optional): Extra context, constraints, or user-specific requirements
 
-## Output Expectations
+## Output
 
-- Display ticket details prominently.
-- Break plan into atomic, actionable steps.
-- Provide code snippets and file paths.
-- Include test examples.
-- Clear checkpoints for user confirmation.
-- Final summary and move to `.dev-kit/tickets/completed/`.
+After completing the ticket, provide:
+1. Brief summary of what was implemented
+2. List of files created/modified
+3. Test results and verification status
+4. Any issues discovered or follow-up work needed
 
-## Example Usage
+## Handling Additional Work
 
-- `/dev-kit.work ticket=PROJ-001 additional_instruction="ensure responsive design across all viewport sizes"`
+If implementation reveals work beyond the ticket scope:
+1. Clearly identify the additional work needed
+2. Use `/dev-kit.ticket` to create new ticket(s)
+3. Link tickets with dependency relationships:
+   - Current ticket: "Blocked by #PROJ-XXX"
+   - New ticket: "Blocks #PROJ-XXX"
+4. Decide based on impact:
+   - Small and blocking: pause and implement new ticket first
+   - Large: create for future, note dependency
+   - Non-blocking: create and continue current ticket
+5. Document the discovery and rationale
 
-## Tips for Better Implementation
+## Key Principles
 
-- Start with the smallest AC first (quick wins build momentum).
-- Test each step immediately (don't batch implementation).
-- Reference existing code patterns in the project.
-- Ask clarifying questions if AC is vague.
-- Consider refactoring opportunities during implementation.
-- Link related tickets for future work.
+### DO
+- Implement all acceptance criteria autonomously
+- Test thoroughly before marking complete
+- Follow project patterns and standards
+- Ask clarifying questions only when requirements are truly ambiguous
+- Create follow-up tickets for out-of-scope work
 
-## Handling Additional Work During Implementation
+### DO NOT
+- Ask for confirmation during implementation steps
+- Leave implementation incomplete
+- Skip testing or verification
+- Ignore project standards or patterns
+- Create unnecessary files or over-engineer solutions
+- Move ticket to completion without user confirmation
 
-If during implementation you discover that additional work is needed beyond the current ticket's scope:
+Work autonomously through implementation, but always ask for confirmation before marking the ticket as complete.
 
-1. **Identify the gap**: Clearly articulate what additional work is needed and why.
-2. **Create new ticket(s)**: Use `/dev-kit.ticket` to generate the additional ticket(s).
-3. **Link tickets**: Update both the original and new ticket(s) with dependency relationships:
-   - Mark current ticket as "Blocked by #PROJ-XXX".
-   - Mark new ticket as "Blocks #PROJ-XXX".
-4. **Decide on approach**:
-   - If new work is small and urgent: pause current ticket and implement new one first.
-   - If new work is large: create ticket for future work, note dependency in current ticket.
-   - If new work is non-blocking: create ticket and continue with current implementation.
-5. **Document**: Add notes explaining what additional work was discovered and why.
-
-## Do Not
-
-- Skip project standards and guidelines.
-- Implement without tests.
-- Leave code undocumented.
-- Ignore edge cases or error handling.
-
-Run this workflow every time; implement incrementally and verify each step before proceeding.
+<user-request>
+ $ARGUMENTS
+</user-request>

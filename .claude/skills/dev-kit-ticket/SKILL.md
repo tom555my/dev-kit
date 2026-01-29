@@ -96,3 +96,7 @@ Example ordering:
 - **Implementation on demand**: Only start implementing ticket work if the user explicitly says "implement ticket #XXXXX" or "let's work on this ticket".
 
 See `references/ticket_template.md` for the standard ticket format.
+
+<user-request>
+ $ARGUMENTS
+</user-request>

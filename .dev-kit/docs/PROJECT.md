@@ -68,7 +68,7 @@ Modern software development involves repetitive tasks that are well-suited for A
 **Journey 3: Technical Research**
 1. Developer encounters unfamiliar technology or pattern
 2. Runs `/dev-kit.research` with research topic
-3. Agent investigates and documents findings in `.dev-kit/knowledges/`
+3. Agent investigates and documents findings in `.dev-kit/knowledge/`
 4. Future work references existing research, avoiding redundant investigations
 
 ---
@@ -89,7 +89,7 @@ Modern software development involves repetitive tasks that are well-suited for A
 
 ### 3. Research & Knowledge Management (`/dev-kit.research`)
 - Investigates specific technologies or patterns
-- Documents findings in `.dev-kit/knowledges/`
+- Documents findings in `.dev-kit/knowledge/`
 - Creates version-specific research (e.g., "Next.js 16", not just "Next.js")
 - Builds queryable knowledge base over time
 
@@ -100,7 +100,7 @@ Modern software development involves repetitive tasks that are well-suited for A
 - Updates ticket status upon completion
 
 ### 5. Documentation Refinement (`/dev-kit.refine`)
-- Consolidates `.dev-kit/docs/` and `.dev-kit/knowledges/`
+- Consolidates `.dev-kit/docs/` and `.dev-kit/knowledge/`
 - Verifies documentation against current codebase
 - Updates outdated content and removes inaccuracies
 - Maintains documentation quality over time
@@ -192,7 +192,7 @@ Modern software development involves repetitive tasks that are well-suited for A
 - **Vibe-coder**: A developer who prefers natural language instructions and AI-assisted coding
 - **Workflow**: A defined set of steps for accomplishing a development task
 - **Ticket**: A structured work item with User Story, Acceptance Criteria, and Implementation Guidance
-- **Knowledge file**: A research document in `.dev-kit/knowledges/` about a specific technology or pattern
+- **Knowledge file**: A research document in `.dev-kit/knowledge/` about a specific technology or pattern
 - **Turbo annotation**: A workflow marker (`// turbo` or `// turbo-all`) indicating commands can be auto-executed
 
 ---

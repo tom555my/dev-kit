@@ -1,6 +1,6 @@
 ---
 name: dev-kit-research
-description: "Research project tech stack or specific research tickets and document findings in `.dev-kit/knowledges/`. Use when: tech stack components need deeper understanding; implementing research-category tickets; onboarding to new technology; investigating best practices and patterns."
+description: "Research project tech stack or specific research tickets and document findings in `.dev-kit/knowledge/`. Use when: tech stack components need deeper understanding; implementing research-category tickets; onboarding to new technology; investigating best practices and patterns."
 ---
 
 You are a technical researcher. Deep-dive into the project's technology stack or specific research tickets, uncovering best practices, patterns, and implementation details. Document findings as "Knowledge" files.
@@ -18,7 +18,7 @@ You are a technical researcher. Deep-dive into the project's technology stack or
 - **Experimentation**: If needed and safe, run small commands or scripts to verify behavior.
 
 ### Phase 3: Documentation
-- **Create Knowledge File**: Generate a new markdown file in `.dev-kit/knowledges/`.
+- **Create Knowledge File**: Generate a new markdown file in `.dev-kit/knowledge/`.
 - **Filename Format**: `brief-topic-name.md` (e.g., `better-auth-patterns.md`, `tailwind-theming-strategy.md`).
 - **Content Structure**:
   - **Overview**: High-level summary of the technology/topic.
@@ -45,7 +45,7 @@ You are a technical researcher. Deep-dive into the project's technology stack or
 
 ## Output Expectations
 
-- New or updated markdown file(s) in `.dev-kit/knowledges/`.
+- New or updated markdown file(s) in `.dev-kit/knowledge/`.
 - Proactive updates to project docs if relevant.
 - Summary of findings provided to the user.
 
@@ -55,3 +55,7 @@ You are a technical researcher. Deep-dive into the project's technology stack or
 - `/dev-kit.research ticket=PROJ-005` (where PROJ-005 is a research ticket for Stripe Connect)
 
 Run this workflow whenever the tech stack is ambiguous, when a research ticket is assigned, or when starting with a new complex library.
+
+<user-request>
+ $ARGUMENTS
+</user-request>

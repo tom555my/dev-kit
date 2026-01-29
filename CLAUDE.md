@@ -74,7 +74,7 @@ The `.agent/workflows/` directory contains skill definitions for AI-assisted dev
 
 ### Documentation Structure
 - `.dev-kit/docs/`: Project documentation (PROJECT.md, TECH.md)
-- `.dev-kit/knowledges/`: Technology-specific knowledge files (e.g., nextjs-16.md, tailwind-4.md)
+- `.dev-kit/knowledge/`: Technology-specific knowledge files (e.g., nextjs-16.md, tailwind-4.md)
 - `.dev-kit/tickets/`: Generated work tickets
 
 ## Configuration Files

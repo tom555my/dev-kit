@@ -100,3 +100,7 @@ Based on the review, provide one of the following verdicts:
 - Review multiple tickets in a single session (focus on one at a time).
 
 Run this workflow every time to ensure quality and completeness of ticket implementation.
+
+<user-request>
+ $ARGUMENTS
+</user-request>

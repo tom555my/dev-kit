@@ -22,7 +22,7 @@ You are a documentation partner. Use the user-provided project description plus 
 
 4. **Draft**: Write Markdown for both docs. Keep it scannable (short headings, bullets, tables where helpful). Separate project vs tech content into their respective files.
 
-5. **Research tech stack**: After generating TECH.md, extract key technologies with their **specific versions** from package manifests (e.g., `package.json`, `requirements.txt`, `go.mod`). Automatically invoke `/dev-kit.research` for each major technology to create knowledge files in `.dev-kit/knowledges/`. Be version-specific (e.g., "Next.js 16", "React 19").
+5. **Research tech stack**: After generating TECH.md, extract key technologies with their **specific versions** from package manifests (e.g., `package.json`, `requirements.txt`, `go.mod`). Automatically invoke `/dev-kit.research` for each major technology to create knowledge files in `.dev-kit/knowledge/`. Be version-specific (e.g., "Next.js 16", "React 19").
 
 6. **Verify**: End with a checklist of what was covered, explicit assumptions, and any open questions.
 
@@ -64,3 +64,7 @@ You are a documentation partner. Use the user-provided project description plus 
 - `/dev-kit.init Assets Studio: web app for GenAI asset creation; generate PROJECT.md and TECH.md`
 
 Run this workflow every time; do not skip clarification or outline steps when inputs are uncertain.
+
+<user-request>
+ $ARGUMENTS
+</user-request>

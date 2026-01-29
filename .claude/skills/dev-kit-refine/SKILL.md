@@ -1,20 +1,20 @@
 ---
 name: dev-kit-refine
-description: "Consolidate and update documentation in `.dev-kit/docs/` and `.dev-kit/knowledges/` by verifying against the codebase. Use when: documentation has drifted from implementation; consolidating duplicate content; updating docs after major refactoring; verifying documentation accuracy."
+description: "Consolidate and update documentation in `.dev-kit/docs/` and `.dev-kit/knowledge/` by verifying against the codebase. Use when: documentation has drifted from implementation; consolidating duplicate content; updating docs after major refactoring; verifying documentation accuracy."
 ---
 
-You are a documentation consolidation guide. Update and consolidate docs in `.dev-kit/docs/` and `.dev-kit/knowledges/` by verifying accuracy against the current codebase and producing a report of changes and discrepancies.
+You are a documentation consolidation guide. Update and consolidate docs in `.dev-kit/docs/` and `.dev-kit/knowledge/` by verifying accuracy against the current codebase and producing a report of changes and discrepancies.
 
 ## Scope
 
-- Only edit files under `.dev-kit/docs/` and `.dev-kit/knowledges/`.
+- Only edit files under `.dev-kit/docs/` and `.dev-kit/knowledge/`.
 - Update documentation directly.
 - Produce a report in `.dev-kit/docs/reports/DOC_KIT_REFINE_REPORT_YYYY-MM-DD.md` using today's date.
 - No per-document "Sources checked" section.
 
 ## Workflow
 
-1. **Inventory docs**: List all markdown files in `.dev-kit/docs/` and `.dev-kit/knowledges/`.
+1. **Inventory docs**: List all markdown files in `.dev-kit/docs/` and `.dev-kit/knowledge/`.
 
 2. **Scan codebase**: Identify relevant code sources (routes, APIs, schemas, configs, UI patterns).
 
@@ -29,7 +29,7 @@ You are a documentation consolidation guide. Update and consolidate docs in `.de
 ## Detailed Steps
 
 ### Collect Inputs
-- Read all markdown files in `.dev-kit/docs/` and `.dev-kit/knowledges/`.
+- Read all markdown files in `.dev-kit/docs/` and `.dev-kit/knowledge/`.
 - Note optional `focus` and `additional instruction` inputs.
 
 ### Build Codebase Evidence Map
@@ -48,7 +48,7 @@ For each doc section:
 - Ensure consistent terminology and navigation.
 
 ### Apply Updates
-- Edit docs in place under `.dev-kit/docs/` and `.dev-kit/knowledges/` only.
+- Edit docs in place under `.dev-kit/docs/` and `.dev-kit/knowledge/` only.
 - Keep changes minimal and focused on accuracy and consolidation.
 - Maintain existing doc style and formatting conventions.
 
@@ -66,7 +66,7 @@ Create `.dev-kit/docs/reports/DOC_KIT_REFINE_REPORT_YYYY-MM-DD.md` with:
 
 ## Output Expectations
 
-- Updated docs in `.dev-kit/docs/` and `.dev-kit/knowledges/` with consolidated content.
+- Updated docs in `.dev-kit/docs/` and `.dev-kit/knowledge/` with consolidated content.
 - A report file at `.dev-kit/docs/reports/DOC_KIT_REFINE_REPORT_YYYY-MM-DD.md`.
 - No additional files outside `.dev-kit/`.
 
@@ -76,9 +76,13 @@ Create `.dev-kit/docs/reports/DOC_KIT_REFINE_REPORT_YYYY-MM-DD.md` with:
 
 ## Do Not
 
-- Edit files outside `.dev-kit/docs/` and `.dev-kit/knowledges/`.
+- Edit files outside `.dev-kit/docs/` and `.dev-kit/knowledge/`.
 - Create new docs without consolidating existing content first.
 - Add unverifiable claims.
 - Skip the report.
 
 Run this workflow every time; keep documentation accurate, consolidated, and aligned with the current codebase.
+
+<user-request>
+ $ARGUMENTS
+</user-request>

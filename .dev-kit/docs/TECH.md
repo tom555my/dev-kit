@@ -15,7 +15,7 @@ dev-kit/
 │   └── skills/             # Extended agent capabilities
 ├── .dev-kit/
 │   ├── docs/               # PROJECT.md, TECH.md
-│   ├── knowledges/         # Research documentation
+│   ├── knowledge/         # Research documentation
 │   └── tickets/            # Generated work items
 ├── app/                    # Next.js 16 App Router
 ├── components/             # React 19 UI components (shadcn/ui)
@@ -85,7 +85,7 @@ dev-kit/
 │
 ├── .dev-kit/                   # Project artifacts (generated)
 │   ├── docs/                   # PROJECT.md, TECH.md
-│   ├── knowledges/             # Research documentation
+│   ├── knowledge/             # Research documentation
 │   └── tickets/                # Work items
 │
 ├── app/                        # Next.js App Router
