@@ -11,7 +11,7 @@ You are a code reviewer. Review completed tickets one at a time, verifying that 
 
 2. **Parse requirements**: Extract User Story, Acceptance Criteria, and any references or dependencies.
 
-3. **Analyze implementation**: Use code analysis tools (grep, view_file, view_code_item) to examine the implemented code.
+3. **Analyze implementation**: Use code analysis tools (grep, view_file, view_code_item) or testing tools like (chrome-dev-tools, agent-browser etc.) to examine the implemented code and the result of the changes.
 
 4. **Verify each AC**: Check each Acceptance Criterion against the actual implementation.
 
