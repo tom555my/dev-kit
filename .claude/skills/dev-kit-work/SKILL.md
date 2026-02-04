@@ -67,12 +67,12 @@ Once all acceptance criteria are met:
 - Add clear documentation where needed
 - Write comprehensive tests
 - Handle errors and edge cases gracefully
-- Use project's import aliases (`@/` for root imports)
+- Use project's import aliases (`@/` for root imports etc.)
 
 ### Common Patterns
 Reference existing code in the repository to maintain consistency with:
 - Component structure (Server vs Client Components)
-- Styling patterns (Tailwind CSS, shadcn/ui)
+- Styling patterns (Tailwind CSS, shadcn/ui etc.)
 - Error handling approaches
 - Testing conventions
 
